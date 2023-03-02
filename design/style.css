@@ -27,13 +27,18 @@
   justify-content: space-between  ;
   padding: 24px 24px 42px;
   background: linear-gradient(180deg, rgba(120,87,255,1) 3%, rgba(46,43,233,1) 100%);
-  border-radius: 0 0 24px 24px;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
 }
 .principal h1{
   font-size: 1.9rem;
   color: var(--light-lavender);
   padding-bottom: 16px;
   font-weight: 500;
+}
+.principal p {
+  max-width: 290px;
+
 }
 .principal .score{
   width: 150px;
@@ -73,6 +78,7 @@
   font-weight: 500;
 }
 .secondary{
+  max-width: 480px;
   display: flex;
   flex-direction: column;
   padding: 24px 32px;
@@ -82,18 +88,30 @@
 .secondary h2{
   font-size: 1.8rem;
   font-weight: 700;
+  padding-bottom: 12px;
 }
 .secondary .score-card{
   height: 54px;
   display: flex;
-  background-color: hsl(0, 100%, 67%,0.10);
+  background-color: hsla(0, 100%, 67%,0.10);
   border-radius: 8px;
   padding: 8px 16px;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+.secondary .score-card:nth-child(3){
+  background-color: hsla(39, 100%, 56%, 0.1);
+}
+.secondary .score-card:nth-child(4){
+  background-color: hsla(166, 100%, 37%, 0.1);
+}
+.secondary .score-card:nth-child(5){
+  background-color: hsla(234, 85%, 45%, 0.1);
 }
 .secondary .score-card div{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
 } 
@@ -119,10 +137,10 @@
 .secondary .score-card p span{
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--light-lavender);
+  color: hsla(224, 30%, 27%,0.2);
 } 
 button{
-  margin-top: 6px;
+  margin-top: 12px;
   height: 54px;
   border-radius: 27px;
   font-size: 1.6rem;
@@ -132,24 +150,48 @@ button{
   color: var(--pale-blue);
 }
 .attribution{
-  font-size: 1.2rem;
+  padding: 12px;
+  background: linear-gradient(180deg, rgb(53, 50, 216) 3%, rgb(74, 47, 183) 100%);
 }
-.attribution a{
-  font-size: 1.1rem;
+.attribution .social{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+.attribution p,
+.attribution p a{
+  text-decoration: none;
+  color: #ECF2FF;
+  font-size: 1.2rem;
+  padding-bottom: 8px;
+}
+.attribution p a{
+  text-decoration: none;
+  color: #ECF2FF;
+  font-size: 1.2rem;
+  padding-bottom: 8px;
 }
 
-@media screen and (min-width:650px) {
+
+@media screen and (min-width:700px) {
+  
   .sumary{
-    width: 100vh;
-    height: 95vh;
     display: flex;
-    margin: 0 auto;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: calc(100vh - 81px);
+  }
+  .sumary > div {
+    border-radius: 16px;
+    display: flex;
+    box-shadow: 3px 3px 25px -5px rgba(0,0,0,0.30);
   }
   .principal{
     width: 350px;
     height: 480px;
-    border-radius: 24px;
+    border-radius: 16px;
     padding: 36px 36px 54px;
     margin: 0;
   }
@@ -171,5 +213,15 @@ button{
     width: 350px;
     height: 480px;
     margin: 0;
+    justify-content: space-between;
+    border-radius: 16px;
+  }
+  .secondary h2{
+    padding-bottom: 18px;
+    padding-top: 12px;
+  }
+  button{
+    margin-top: 18px;
+    margin-bottom: 12px;
   }
 }
